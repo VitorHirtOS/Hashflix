@@ -1,0 +1,15 @@
+{% extends 'global/base.html' %}
+
+{% block title %} Hashflix | homefilmes {% endblock title %} 
+
+{% block content %}
+
+    {% include 'hashflix/partials/homefilmes.html' %}
+
+    {% for filmes in lista_filmes %}
+    <p class="lista">{{ filmes.titulo }}</p> 
+    <p class="lista">{{ filmes.descricao }}</p> 
+    {% endfor %}
+
+
+{% endblock content %}
