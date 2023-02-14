@@ -22,3 +22,12 @@ class Filme(models.Model):
     def __str__(self):
         return self.titulo
     
+    
+class Episodio(models.Model):
+    filme = models.ForeignKey("Filme", related_name="episodios", on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=100, null=True)
+    video = models.URLField()
+ 
+    def __str__(self):
+        return  self.filme.titulo + " - " + self.titulo
+    
